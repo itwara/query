@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "build": "rm -rf dist && npm run build:auto && npm run build:cjs && npm run build:commonjs && npm run build:amd && npm run build:systemjs && npm run build:none",
+    "build": "rm -rf dist && npm run build:auto && npm run build:cjs && npm run build:commonjs && npm run build:amd && npm run build:systemjs && npm run build:none && npm run build:umd",
     "build:auto": "mkdir -p dist && BABEL_ENV=auto babel index.js --out-file dist/index.auto.js",
     "build:cjs": "mkdir -p dist && BABEL_ENV=cjs babel index.js --out-file dist/index.cjs.js",
     "build:commonjs": "mkdir -p dist && BABEL_ENV=commonjs babel index.js --out-file dist/index.commonjs.js",
     "build:amd": "mkdir -p dist && BABEL_ENV=amd babel index.js --out-file dist/index.amd.js",
+    "build:umd": "mkdir -p dist && BABEL_ENV=umd babel index.js --out-file dist/index.umd.js",
     "build:systemjs": "mkdir -p dist && BABEL_ENV=systemjs babel index.js --out-file dist/index.systemjs.js",
     "build:none": "mkdir -p dist && BABEL_ENV=false babel index.js --out-file dist/index.false.js"
   },
