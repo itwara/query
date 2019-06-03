@@ -4,11 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "rm -rf dist && npm run build:auto && npm run build:cjs && npm run build:commonjs && npm run build:amd && npm run build:systemjs && npm run build:none",
+    "build:auto": "mkdir -p dist && BABEL_ENV=auto babel index.js --out-file dist/index.auto.js",
+    "build:cjs": "mkdir -p dist && BABEL_ENV=cjs babel index.js --out-file dist/index.cjs.js",
+    "build:commonjs": "mkdir -p dist && BABEL_ENV=commonjs babel index.js --out-file dist/index.commonjs.js",
+    "build:amd": "mkdir -p dist && BABEL_ENV=amd babel index.js --out-file dist/index.amd.js",
+    "build:systemjs": "mkdir -p dist && BABEL_ENV=systemjs babel index.js --out-file dist/index.systemjs.js",
+    "build:none": "mkdir -p dist && BABEL_ENV=false babel index.js --out-file dist/index.false.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "mocha": "^6.1.4"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4"
   }
 }
