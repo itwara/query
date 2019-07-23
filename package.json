@@ -1,7 +1,7 @@
 {
   "name": "query2obj",
-  "version": "1.0.0",
-  "description": "1. querystring默认区分大小写，考虑支持可配 2. 支持自定义过滤字符 3. 目前如果key值相同，采用的策略是以最后出现的value为准,暂不支持策略自定义 4. 支持解析encode后的url",
+  "version": "1.0.1",
+  "description": "支持search或者hash等形式的querystring解析，返回一个query对象",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
