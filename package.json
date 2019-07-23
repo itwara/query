@@ -1,7 +1,7 @@
 {
   "name": "query",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. querystring默认区分大小写，考虑支持可配 2. 支持自定义过滤字符 3. 目前如果key值相同，采用的策略是以最后出现的value为准,暂不支持策略自定义 4. 支持解析encode后的url",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -15,7 +15,7 @@
     "build:systemjs": "mkdir -p dist && BABEL_ENV=systemjs babel index.js --out-file dist/index.systemjs.js",
     "build:none": "mkdir -p dist && BABEL_ENV=false babel index.js --out-file dist/index.false.js"
   },
-  "author": "",
+  "author": "itwara",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -27,5 +27,21 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itwara/query.git"
+  },
+  "keywords": [
+    "querystring",
+    "queryObject",
+    "query"
+  ],
+  "bugs": {
+    "url": "https://github.com/itwara/query/issues"
+  },
+  "homepage": "https://github.com/itwara/query#readme"
 }
